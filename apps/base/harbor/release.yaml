@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: harbor
+  namespace: harbor
+spec:
+  releaseName: harbor
+  chart:
+    spec:
+      chart: harbor
+      sourceRef:
+        kind: HelmRepository
+        name: harbor
+  interval: 50m
+  install:
+    remediation:
+      retries: 3
+  # Default values
+  # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
+  values:
+    expose:
+    type: ingress
+    ingress:
+      hosts:
+        core: harbor.domolitom.com
+  externalURL: https://harbor.domolitom.com
+
+  # The initial password of Harbor admin. Change it from portal after launching Harbor
+  # or give an existing secret for it
+  # key in secret is given via (default to HARBOR_ADMIN_PASSWORD)
+  # existingSecretAdminPassword:
+  harborAdminPassword: "Harbor12345"
+
+      
