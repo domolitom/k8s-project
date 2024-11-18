@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: harbor
+  namespace: podinfo
+spec:
+  chart:
+    spec:
+      version: "1.15.1"
+  values:
+    expose:
+      type: ingress
+      tls:
+        enabled: false
+      ingress:
+        hosts:
+          core: harbor.dom.com
+          notary: harbor.dom.com
+
+    externalURL: https://harbor.dom.com
+
+    # The initial password of Harbor admin. Change it from portal after launching Harbor
+    # or give an existing secret for it
+    # key in secret is given via (default to HARBOR_ADMIN_PASSWORD)
+    # existingSecretAdminPassword:
+    #existingSecretAdminPasswordKey: HARBOR_ADMIN_PASSWORD
+    harborAdminPassword: "Harbor@12345"
