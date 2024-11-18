@@ -17,8 +17,6 @@ spec:
           core: harbor.dom.com
           notary: harbor.dom.com
 
-    externalURL: https://harbor.dom.com
-
     # The initial password of Harbor admin. Change it from portal after launching Harbor
     # or give an existing secret for it
     # key in secret is given via (default to HARBOR_ADMIN_PASSWORD)
