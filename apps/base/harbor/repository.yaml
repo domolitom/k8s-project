@@ -4,4 +4,4 @@ metadata:
   name: harbor
   namespace: harbor
 spec:
-  url: https://kubernetes.github.io/dashboard/
+  url: https://helm.goharbor.io
