@@ -23,7 +23,6 @@ spec:
     ingress:
       hosts:
         core: harbor.domolitom.com
-  externalURL: https://harbor.domolitom.com
 
   # The initial password of Harbor admin. Change it from portal after launching Harbor
   # or give an existing secret for it
