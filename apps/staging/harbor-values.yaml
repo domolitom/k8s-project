@@ -16,3 +16,4 @@ spec:
         hosts:
           core: harbor.dom.com
           notary: harbor.dom.com
+        className: nginx  
