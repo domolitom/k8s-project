@@ -16,4 +16,6 @@ spec:
         hosts:
           core: harbor.dom.com
           notary: harbor.dom.com
-        className: traefik  
+        className: traefik
+        annotations:
+          kubernetes.io/ingress.class: "traefik"
