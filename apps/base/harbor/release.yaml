@@ -22,6 +22,6 @@ spec:
       type: ingress
       ingress:
         hosts:
-          core: harbor.domolitom.com
+          core: harbor.dom.com
 
       
