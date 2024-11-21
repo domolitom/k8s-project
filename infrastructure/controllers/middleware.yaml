@@ -1,0 +1,28 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: add-host-header
+  namespace: harbor
+spec:
+  headers:
+    customRequestHeaders:
+      Host: harbor.dom.com
+
+---
+
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: harbor
+  namespace: harbor
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`harbor.dom.com`)
+      kind: Rule
+      services:
+        - name: harbor-core
+          port: 80
+      middlewares:
+        - name: add-host-header
