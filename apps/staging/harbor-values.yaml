@@ -10,8 +10,6 @@ spec:
   values:
     expose:
       type: ingress
-      tls:
-        enabled: false
       ingress:
         hosts:
           core: harbor.dom.com
