@@ -13,7 +13,7 @@ metadata:
   namespace: traefik
 spec:
   interval: 24h
-  url: https://helm.traefik.io/
+  url: https://helm.traefik.io/traefik
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
