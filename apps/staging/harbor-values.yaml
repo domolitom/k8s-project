@@ -9,8 +9,12 @@ spec:
       version: "1.15.1"
   values:
     expose:
-      type: NodePort
-      tls:
-        auto:
-          commonName: "harbor.dom.com"  
+      type: ingress
+      ingress:
+        hosts:
+          core: harbor.dom.com
+          notary: harbor.dom.com
+        className: traefik
+        annotations:
+          kubernetes.io/ingress.class: "traefik"
     harborAdminPassword: "admin"      

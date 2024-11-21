@@ -17,5 +17,11 @@ spec:
       retries: 3
   # Default values
   # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
+  values:
+    expose:
+      type: ingress
+      ingress:
+        hosts:
+          core: harbor.dom.com
 
       
