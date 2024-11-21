@@ -9,7 +9,7 @@ spec:
       version: "1.15.1"
   values:
     expose:
-      type: ClusterIP
+      type: NodePort
       tls:
         auto:
           commonName: "harbor.dom.com"  
