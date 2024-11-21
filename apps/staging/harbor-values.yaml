@@ -8,6 +8,7 @@ spec:
     spec:
       version: "1.15.1"
   values:
+    externalURL: "http://harbor.dom.com"
     expose:
       type: ingress
       ingress:
