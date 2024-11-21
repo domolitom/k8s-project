@@ -19,7 +19,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`harbor.dom.com`)
+    - match: Host(`localhost`) 
       kind: Rule
       services:
         - name: harbor-core
