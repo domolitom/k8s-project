@@ -10,4 +10,7 @@ spec:
   values:
     expose:
       type: ClusterIP
+    tls:
+      auto:
+        commonName: "harbor.dom.com"  
     harborAdminPassword: "admin"      
