@@ -41,3 +41,6 @@ spec:
       insecure: true
     providers:
       kubernetesCRD: {}
+    additionalArguments:
+      - "--api.insecure=true" # Explicitly enable insecure dashboard
+      - "--api.dashboard=true" # Ensure the dashboard is enabled  
