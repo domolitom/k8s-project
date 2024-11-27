@@ -25,19 +25,26 @@ spec:
   chart:
     spec:
       chart: traefik
-      version: "*"
+      version: "33.0.0"
       sourceRef:
         kind: HelmRepository
         name: traefik
         namespace: traefik
       interval: 12h
   values:
-    service:
-      type: ClusterIP
+    persistence:
+      enabled: true
+      name: data
+      accessMode: ReadWriteOnce
+      size: 64Mi
+      path: /data
+
+    logs:
+      general:
+        level: DEBUG
+      acces:
+        enabled: true
+
     ingressRoute:
       dashboard:
         enabled: true
-    api:
-      insecure: true
-    providers:
-      kubernetesCRD: {}
