@@ -25,16 +25,16 @@ spec:
   chart:
     spec:
       chart: traefik
-      version: "10.24.0"
+      version: "24.0.0"
       sourceRef:
         kind: HelmRepository
         name: traefik
         namespace: traefik
       interval: 12h
   values:
-    image:
-      name: traefik
-      tag: "2.8.0"
+    #image:
+      # name: traefik
+      # tag: "2.8.0"
 
     persistence:
       enabled: true
