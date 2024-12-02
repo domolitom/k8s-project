@@ -1,0 +1,28 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: add-host-header
+  namespace: traefik
+spec:
+  headers:
+    customRequestHeaders:
+      Host: "harbor.dom.com"
+
+---
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: harbor-ingress
+  namespace: harbor
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`harbor.dom.com`)
+      kind: Rule
+      services:
+        - name: harbor-harbor-portal
+          port: 80
+      middlewares:
+        - name: add-custom-header
