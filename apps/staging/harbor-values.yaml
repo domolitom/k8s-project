@@ -18,5 +18,5 @@ spec:
         className: traefik
         annotations:
           kubernetes.io/ingress.class: "traefik"
-          traefik.ingress.kubernetes.io/router.entrypoints: traefik
+          traefik.ingress.kubernetes.io/router.entrypoints: harbor
     harborAdminPassword: "admin"      

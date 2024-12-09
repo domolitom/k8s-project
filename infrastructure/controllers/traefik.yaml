@@ -49,3 +49,9 @@ spec:
     ingressRoute:
       dashboard:
         enabled: true
+
+    ports:
+      harbor:
+        port: 8888
+        protocol: TCP
+        
