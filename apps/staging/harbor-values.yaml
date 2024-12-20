@@ -12,9 +12,9 @@ spec:
     expose:
       type: ingress
       ingress:
-        #hosts:
-        #  core: harbor.dom.com
-        #  notary: harbor.dom.com
+        hosts:
+          core: harbor.dom.com
+          notary: harbor.dom.com
         className: traefik
         annotations:
           kubernetes.io/ingress.class: "traefik"
