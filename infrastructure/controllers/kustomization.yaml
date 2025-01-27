@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - traefik.yaml
   - middleware.yaml
-  - ingressroute.yaml
+  - ingressRoute.yaml
   - ingress.yaml
