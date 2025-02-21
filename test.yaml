@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: traefik-rb
+  namespace: traefik
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: traefik
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin  # Assign the 'cluster-admin' role
+  apiGroup: rbac.authorization.k8s.io
+
